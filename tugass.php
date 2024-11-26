@@ -1,16 +1,15 @@
 <?php
-
 function buatTabel($n, $jenis) {
     echo "<table border='1' cellpadding='5' cellspacing='0' style='margin: 10px; float: left;'>";
     
     // Judul tabel
     echo "<tr><th colspan='" . ($n + 1) . "' style='text-align: center;'>";
     if ($jenis == "penjumlahan") {
-        echo "Tabel Penjumlahan";
+        echo "Tabel jumlah";
     } elseif ($jenis == "perkalian") {
-        echo "Tabel Perkalian";
-    } elseif ($jenis == "pangkat") {
-        echo "Tabel Pangkat";
+        echo "Tabel kali";
+    } elseif ($jenis == "perpangkat") {
+        echo "Tabel pangkat";
     }
     echo "</th></tr>";
     
@@ -29,7 +28,7 @@ function buatTabel($n, $jenis) {
                 $hasil = $i + $j;
             } elseif ($jenis == "perkalian") {
                 $hasil = $i * $j;
-            } elseif ($jenis == "pangkat") {
+            } elseif ($jenis == "perpangkat") {
                 $hasil = pow($i, $j);
             }
             echo "<td>$hasil</td>";
@@ -39,11 +38,11 @@ function buatTabel($n, $jenis) {
     echo "</table>";
 }
 
-// Ukuran tabel (misalnya 10)
-$n = 10;
+// Ukuran tabel (misalnya 12)
+$n = 11;
 
 // Menampilkan tabel
 buatTabel($n, "penjumlahan");
 buatTabel($n, "perkalian");
-buatTabel($n, "pangkat");
+buatTabel($n, "perpangkat");
 ?>
